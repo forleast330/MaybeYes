@@ -1,0 +1,6 @@
+interface:
+  display_name: "MaybeYes"
+  short_description: "Predictive permissioning: ABC proceed-first/report-later, D ask-first."
+  default_prompt: "Use $maybeyes: proceed first for safe A/B/C1 actions, keep a ledger, and ask before any D-class action."
+policy:
+  allow_implicit_invocation: true

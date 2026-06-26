@@ -1,0 +1,1 @@
+"""MaybeYes skill package."""

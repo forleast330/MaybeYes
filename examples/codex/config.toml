@@ -1,0 +1,11 @@
+# Example Codex configuration for MaybeYes.
+# Put adapted settings in ~/.codex/config.toml.
+# This keeps Codex inside workspace-write, uses interactive approvals,
+# and optionally lets auto_review handle eligible sandbox-boundary approvals.
+
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+
+[sandbox_workspace_write]
+network_access = false

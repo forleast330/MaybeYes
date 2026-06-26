@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Bash(rg *)",
+      "Bash(grep *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(npm test)",
+      "Bash(npm run test)",
+      "Bash(npm run lint)",
+      "Bash(pnpm test)",
+      "Bash(pnpm run lint)",
+      "Bash(python -m pytest *)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(npm publish *)",
+      "Bash(terraform apply *)",
+      "Bash(kubectl apply *)",
+      "Bash(gh release *)"
+    ],
+    "deny": [
+      "Bash(curl * | bash *)",
+      "Bash(git push --force *)",
+      "Bash(rm -rf / *)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./id_rsa)",
+      "Read(./.ssh/*)"
+    ]
+  }
+}
