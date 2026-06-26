@@ -1,11 +1,11 @@
 ---
 name: maybeyes
-description: Use MaybeYes for coding-agent approval fatigue, predictive permissions, optimistic execution, ABCD risk classification, approval ledgers, and “proceed first, report later” workflows. For A/B/C1 actions, proceed when safe, scoped, and reversible; for D actions, ask before executing.
+description: Use MaybeYes for coding-agent approval fatigue, predictive permissions, optimistic execution, ABCD risk classification, approval ledgers, and "proceed first, report later" workflows. For A/B/C1 actions, proceed when safe, scoped, and reversible; for D actions, ask before executing.
 ---
 
 # MaybeYes
 
-**Core motto:** ABC 先斩后奏，D 类必须上奏.
+**Core motto:** proceed first only when safe, scoped, and logged; ask first for D-class actions.
 
 Use this skill when the user wants fewer approval prompts, predictive permissioning, batched approvals, or a clear policy for when a coding agent should proceed versus ask.
 
@@ -19,7 +19,7 @@ Use this skill when the user wants fewer approval prompts, predictive permission
 
 ## Classify every action before acting
 
-### A — Read-only / exploration
+### A - Read-only / exploration
 
 Examples: `ls`, `pwd`, `rg`, `grep`, `git status`, `git diff`, reading ordinary project files, command help output.
 
@@ -27,7 +27,7 @@ Default: execute automatically and log briefly.
 
 Exceptions: reading `.env`, tokens, SSH keys, cloud credentials, password stores, private certs, or files outside the expected workspace. Sensitive reads are not ordinary A actions; ask or deny.
 
-### B — Reversible local changes
+### B - Reversible local changes
 
 Examples: editing `src/**`, `tests/**`, docs, local config inside task scope, formatting, adding tests.
 
@@ -35,7 +35,7 @@ Default: optimistically execute when likely approved and rollback exists. Prefer
 
 Default threshold: `p_approve >= 0.50`.
 
-### C1 — Controlled external or persistent side effects
+### C1 - Controlled external or persistent side effects
 
 Examples: installing dependencies already declared in lockfiles/manifests, read-only network fetches to trusted domains, pushing to the same feature branch, creating a draft PR.
 
@@ -49,13 +49,13 @@ Default: execute only if all are true:
 
 Default threshold: `p_approve >= 0.85`.
 
-### C2 — Broad or hard-to-reverse side effects
+### C2 - Broad or hard-to-reverse side effects
 
 Examples: pushing to `main`/`master`/release/protected branches, changing shared infrastructure, publishing packages, non-draft releases, team-wide messages, cloud resource mutation.
 
 Default: treat as D.
 
-### D — Dangerous / irreversible / sensitive
+### D - Dangerous / irreversible / sensitive
 
 Examples: `git push --force`, `git reset --hard`, `git clean -fd`, deletion of pre-existing user files, production deploys, DB migrations, destructive cloud/IAM changes, package publishing, reading/transmitting secrets, downloaded-code execution such as `curl ... | bash`.
 

@@ -2,7 +2,7 @@
 
 > **MaybeYes = predictive permissioning for coding agents.**
 >
-> A/B/C 类动作先斩后奏；D 类动作必须先问。
+> A/B/C1 actions may proceed first when safe, scoped, and logged. D actions must ask first.
 
 ## 1. Purpose
 
@@ -62,19 +62,19 @@ The shared implementation should use the Agent Skills open-standard subset:
 
 ```text
 maybeyes/
-├── SKILL.md
-├── references/
-│   ├── abcd-taxonomy.md
-│   └── ledger-format.md
-└── agents/
-    └── openai.yaml    # Codex optional metadata
+|-- SKILL.md
+|-- references/
+|   |-- abcd-taxonomy.md
+|   `-- ledger-format.md
+`-- agents/
+    `-- openai.yaml    # Codex optional metadata
 ```
 
 Do not rely on Claude-only frontmatter such as `allowed-tools` in the portable core skill unless you intentionally create a Claude-specific variant.
 
 ## 4. Risk taxonomy
 
-### A — Read-only / exploration
+### A - Read-only / exploration
 
 Examples:
 
@@ -98,7 +98,7 @@ Exceptions:
 
 These exceptions become D or ask-now.
 
-### B — Reversible local changes
+### B - Reversible local changes
 
 Examples:
 
@@ -121,7 +121,7 @@ Required guardrails:
 - log files touched and diff summary;
 - show the ledger before finalizing.
 
-### C1 — Controlled external/persistent side effects
+### C1 - Controlled external/persistent side effects
 
 Examples:
 
@@ -138,7 +138,7 @@ if p_approve >= 0.85 and action is scoped, non-production, and undoable/idempote
 else: batch ask
 ```
 
-### C2 — Broad, shared, or hard-to-reverse side effects
+### C2 - Broad, shared, or hard-to-reverse side effects
 
 Examples:
 
@@ -156,7 +156,7 @@ Default behavior:
 treat as D
 ```
 
-### D — Dangerous / irreversible / sensitive
+### D - Dangerous / irreversible / sensitive
 
 Examples:
 

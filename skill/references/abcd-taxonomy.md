@@ -2,7 +2,7 @@
 
 MaybeYes classifies each action before deciding whether to proceed optimistically.
 
-## A — Read-only / exploration
+## A - Read-only / exploration
 
 Likely auto:
 
@@ -21,7 +21,7 @@ Do not treat as ordinary A:
 - files outside the expected workspace;
 - reading data for the purpose of sending it externally.
 
-## B — Reversible local changes
+## B - Reversible local changes
 
 Likely optimistic if rollback exists:
 
@@ -40,7 +40,7 @@ Guardrails:
 - log each file touched;
 - provide rollback steps.
 
-## C1 — Controlled external/persistent side effects
+## C1 - Controlled external/persistent side effects
 
 Possible optimistic with high threshold:
 
@@ -58,7 +58,7 @@ Required conditions:
 - undoable or idempotent;
 - high confidence.
 
-## C2 — Treat as D
+## C2 - Treat as D
 
 Examples:
 
@@ -70,7 +70,7 @@ Examples:
 - send team-wide notifications;
 - mutate remote databases or queues.
 
-## D — Never auto-execute
+## D - Never auto-execute
 
 Examples:
 

@@ -11,7 +11,7 @@ Goal:
 Create a portable skill named `maybeyes` that implements predictive permissioning for coding agents:
 - A/B/C1 actions may proceed optimistically when safe enough, reversible/scoped, and logged.
 - D actions must never auto-execute; they must be explicitly approved or denied.
-- The skill must emphasize “先斩后奏” for A/B/C and “D 必须上奏” for dangerous actions.
+- The skill must emphasize "proceed first, report later" for safe A/B/C1 actions and "ask first" for dangerous actions.
 - The skill must not bypass host permissions, sandboxing, explicit ask/deny rules, managed settings, or OS restrictions.
 
 Deliverables:

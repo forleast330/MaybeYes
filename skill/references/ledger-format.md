@@ -1,6 +1,6 @@
 # MaybeYes Ledger Format
 
-The ledger is the “奏” in “先斩后奏”. No ledger, no MaybeYes.
+The ledger is the report in "proceed first, report later". No ledger, no MaybeYes.
 
 ## User-facing ledger
 
